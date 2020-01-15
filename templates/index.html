@@ -1,0 +1,21 @@
+<htm>
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+        <title> YOU ARE LOOGED IN:</title>
+    </head>
+    <body>
+        Hello, welcome to Event!
+        <form id="form">
+                <a class="btn btn-primary btn-small btn-login btn-block" style="width: 300px;" href="/">Log out</a>
+        </form>
+        <div class="logged-in-box auth0-box logged-in">
+                <!-- <h1 id="logo"><img src="//cdn.auth0.com/samples/auth0_logo_final_blue_RGB.png" /></h1> -->
+                <img class="avatar" src="{{userinfo['picture']}}"/>
+                <p>{{token}}</p>
+                <h2>Welcome {{userinfo['name']}}</h2>
+                <pre>{{userinfo_pretty}}</pre>
+                <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+            </div>
+      </body>
+      </htm>
