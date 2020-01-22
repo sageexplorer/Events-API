@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify, abort
 import os 
 
 
-AUTH0_DOMAIN = os.environ.get('AUTH_URL', None)
+AUTH0_DOMAIN = os.environ.get('AUTH_DOMAIN', None)
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'event'
 
