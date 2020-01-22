@@ -6,7 +6,11 @@ from authlib.flask.client import OAuth
 from auth import AuthError, requires_auth
 from flask_bootstrap import Bootstrap
 import os 
-
+from dotenv import load_dotenv
+load_dotenv()
+from pathlib import Path  
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 
 app = Flask(__name__)
@@ -211,18 +215,18 @@ def index():
 @app.errorhandler(404)
 def notfound(error):
     return jsonify({
-                    "success": False, 
-                    "error": 404,
-                    "message": "Not found."
-                    }), 404
+        "success": False, 
+        "error": 404,
+        "message": "Not found."
+        }), 404
 
 @app.errorhandler(403)
 def notauthorized(error):
     return jsonify({
-                    "success": False, 
-                    "error": 403,
-                    "message": "Not Authorized."
-                    }), 403
+        "success": False, 
+        "error": 403,
+        "message": "Not Authorized."
+        }), 403
 
 if __name__ == '__main__':
     app.secret_key = 'sdlkjweioewlknwlkejlwkejlk'
