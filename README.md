@@ -36,7 +36,7 @@ response: {
   ]
 }
 ```
-
+```
 /get/user
 
 response: {
@@ -48,13 +48,15 @@ response: {
     }
   ]
 }
+```
 
-/add/roles 
-
+```
 /get/events
 This requires a user id which is created first
-
+```
+```
 /post/event
+```
 
 /get/allevents
 
