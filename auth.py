@@ -4,9 +4,10 @@ from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
 from flask import Flask, request, jsonify, abort
+import os 
 
 
-AUTH0_DOMAIN = ''
+AUTH0_DOMAIN = os.environ.get('AUTH_URL', None)
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'event'
 

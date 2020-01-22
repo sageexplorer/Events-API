@@ -5,8 +5,7 @@ from flask_session import Session
 from authlib.flask.client import OAuth
 from auth import AuthError, requires_auth
 from flask_bootstrap import Bootstrap
-import http.client
-
+import os 
 
 
 
@@ -15,22 +14,21 @@ sess = Session()
 oauth = OAuth(app)
 
 
-
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', None)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 
 db = SQLAlchemy(app)
 
 audience='event'
-client_id=''
-client_secret=''
+CLIENT_ID= os.environ.get('CLIENT_ID', None)
+CLIENT_SECRET = os.environ.get('CLIENT_SECRET', None)
 CALLBACK_URL = 'http://localhost:5000/logged'
-AUTH_URL = ''
+AUTH_URL = os.environ.get('AUTH_URL', None)
 
 auth0 = oauth.register(
     'auth0',
-    client_id=client_id,
-    client_secret=client_secret,
+    client_id=CLIENT_ID,
+    client_secret=CLIENT_SECRET,
     api_base_url=AUTH_URL,
     access_token_url=f'{AUTH_URL}/oauth/token',
     authorize_url=f'{AUTH_URL}/authorize',
