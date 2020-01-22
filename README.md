@@ -1,6 +1,6 @@
-#Python project
+## FLASK API project
 
-cd YOUR_PROJECT_DIRECTORY_PATH/
+``` cd YOUR_PROJECT_DIRECTORY_PATH/
 
 virtualenv --no-site-packages env
 
@@ -12,7 +12,7 @@ export FLASK_APP=app
 
 export FLASK_ENV=development # enables debug mode
 
-python3 app.py
+python3 app.py ```
 
 ### You can create an event or events, you can share your events with others.
 ## Managers can see all events, users can see only the events that belong to them or the ones shared to them.
