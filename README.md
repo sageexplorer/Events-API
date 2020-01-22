@@ -17,8 +17,8 @@ python3 app.py
 ```
 
 ### You can create an event or events, you can share your events with others.
-## Managers can see all events, users can see only the events that belong to them or the ones shared to them.
-## These events have APIs so that can be shared for Alexa or something similar 
+### Managers can see all events, users can see only the events that belong to them or the ones shared to them.
+
 
 
 API's (You need user_id, and Token to use this APIs)
@@ -146,7 +146,7 @@ response: {
 }
 ```
 
-##TESTING 
+## TESTING 
 ```
 curl --request GET \
   --url http://localhost:5000/get/events \
