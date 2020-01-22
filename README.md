@@ -22,7 +22,7 @@ python3 app.py
 
 
 API's (You need user_id, and Token to use this APIs)
-```
+```python
 Role: Public
 /create/user - creates users to interact with the event APIs.
 params required: name
@@ -37,7 +37,7 @@ response: {
   ]
 }
 ```
-```
+```python
 Role: Public
 /get/user
 
@@ -52,7 +52,7 @@ response: {
 }
 ```
 
-```
+```python
 Role: user, Permission: get:events
 /get/events
 required params: {id} ID of a user whose events are desired.
@@ -79,7 +79,7 @@ required params: {id} ID of a user whose events are desired.
 }
 
 ```
-```
+```python
 Role: user, Permission: post:events
 /post/event
 required params: {   
@@ -95,7 +95,7 @@ response:
   "status": 200
 }
 ```
-```
+```python
 Role: Manager, Permission: get:allevents
 required params: None. 
 /get/allevents
@@ -126,7 +126,7 @@ reponse: {
       "website": "https://www.onedayu.com/"
     }
 ```
-```
+```python
 Role: Manager, Permission: patch:events
 /patch/event
 required params: id
@@ -137,7 +137,7 @@ response:
 }
 
 ```
-```
+```python
 Role: Manager, Permission: delete:events
 /delete/event
 required params: id 
