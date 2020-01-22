@@ -23,6 +23,7 @@ python3 app.py
 
 API's (You need user_id, and Token to use this APIs)
 ```
+Role: Public
 /create/user - creates users to interact with the event APIs.
 params required: name
 
@@ -37,6 +38,7 @@ response: {
 }
 ```
 ```
+Role: Public
 /get/user
 
 response: {
@@ -51,6 +53,7 @@ response: {
 ```
 
 ```
+Role: user, Permission: get:events
 /get/events
 required params: {id} ID of a user whose events are desired.
 {
@@ -77,13 +80,59 @@ required params: {id} ID of a user whose events are desired.
 
 ```
 ```
+Role: user, Permission: post:events
 /post/event
+required params: {   
+	"user_id": 1,
+	"event": "Oneday University",
+	"date": "Feb 5th",
+	"location": "Los Angeles",
+	"website": "https://www.onedayu.com/"
+}
+response:
+{
+  "events": "event created",
+  "status": 200
+}
 ```
 ```
+Role: Manager, Permission: get:allevents
+required params: None. 
 /get/allevents
+reponse: {
+  "events": [
+    {
+      "data": "Feb 5th",
+      "event": "TED",
+      "event_id": 6,
+      "location": "Los Angeles",
+      "user_id": 1,
+      "website": "https://www.onedayu.com/"
+    },
+    {
+      "data": "Feb 5th",
+      "event": "aya",
+      "event_id": 7,
+      "location": "Los Angeles",
+      "user_id": 1,
+      "website": "https://www.onedayu.com/"
+    },
+    {
+      "data": "Feb 5th",
+      "event": "Oneday University",
+      "event_id": 8,
+      "location": "Los Angeles",
+      "user_id": 1,
+      "website": "https://www.onedayu.com/"
+    }
 ```
 ```
+Role: Manager, Permission: patch:events
 /patch/event
+required params: id
+optional params: event, data, location, website
+response:
+
 ```
 ```
 /delete/event
