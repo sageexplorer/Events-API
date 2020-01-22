@@ -16,8 +16,8 @@ export FLASK_ENV=development # enables debug mode
 python3 app.py 
 ```
 
-### You can create an event or events, you can share your events with others.
-### Managers can see all events, users can see only the events that belong to them or the ones shared to them.
+### You can create an event or events.
+### Managers can see all events, users can see only the events that belong to them (or the ones shared to them -- TODO after capstone project) 
 
 
 
