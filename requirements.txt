@@ -20,4 +20,4 @@ authlib
 flask-session
 python-jose
 flask_bootstrap
-gunicorn
+gunicorn==19.9.0
