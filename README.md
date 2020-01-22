@@ -1,6 +1,6 @@
 ## FLASK API project
 
-``` 
+```python 
 cd YOUR_PROJECT_DIRECTORY_PATH/
 
 virtualenv --no-site-packages env
