@@ -130,12 +130,20 @@ reponse: {
 Role: Manager, Permission: patch:events
 /patch/event
 required params: id
-optional params: event, data, location, website
+optional params: event, date, location, website
 response:
+{
+  "success": true
+}
 
 ```
 ```
+Role: Manager, Permission: delete:events
 /delete/event
+required params: id 
+response: {
+  "success": true
+}
 ```
 
 ##TESTING 
