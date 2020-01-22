@@ -21,7 +21,17 @@ python3 app.py ```
 
 API's (You need user_id, and Token to use this APIs)
 
-/create/user
+/create/user - creates users to interact with the event APIs.
+params required: name
+response: {
+  "status": 200,
+  "user": [
+    {
+      "name": "sage",
+      "user_id": 1
+    }
+  ]
+}
 
 /get/user
 
