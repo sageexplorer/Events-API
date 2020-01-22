@@ -6,7 +6,7 @@ from urllib.request import urlopen
 from flask import Flask, request, jsonify, abort
 
 
-AUTH0_DOMAIN = 'dev--c9y9ca9.auth0.com'
+AUTH0_DOMAIN = ''
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'event'
 
@@ -23,14 +23,7 @@ class AuthError(Exception):
 
 ## Auth Header
 
-'''
-@TODO implement get_token_auth_header() method
-    it should attempt to get the header from the request
-        it should raise an AuthError if no header is present
-    it should attempt to split bearer and the token
-        it should raise an AuthError if the header is malformed
-    return the token part of the header
-'''
+
 def get_token_auth_header():
     """Obtains the Access Token from the Authorization Header
     """
@@ -61,7 +54,6 @@ def get_token_auth_header():
         }, 401)
 
     token = parts[1]
-    print("MY TOKEN IS", token)
     return token
 
 

@@ -1,79 +1,24 @@
-import os
-from sqlalchemy import Column, String, Integer, create_engine
-from flask_sqlalchemy import SQLAlchemy
-import json
+from flask_sqlalchemy import SQLAlchemy 
+from flask import Flask
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://localhost:5432/events'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+
+db = SQLAlchemy(app)
 
 
+class Person(db.Model):
+    __tablename__ = 'persons'
+    id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(), nullable=False)
 
-database_name = "trivia"
-database_path = "postgres://qgejdtoiecguax:972ade6d739de4ff4dde8a8ae1555e51764336c0d5630ec37683f48ec05b5d12@ec2-174-129-33-207.compute-1.amazonaws.com:5432/d92hq0j95hh0o6"
+class Event(db.Model):
+    __tablename__ = 'events'
+    id = db.Column(db.Integer, primary_key=True)
+    event = db.Column(db.String(), nullable=False)
+    date = db.Column(db.String(), nullable=False)
+    location = db.Column(db.String(), nullable=False)
+    website = db.Column(db.String(), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(Person.id), foreign_key=True)
 
-
-db = SQLAlchemy()
-
-'''
-setup_db(app)
-    binds a flask application and a SQLAlchemy service
-'''
-def setup_db(app, database_path=database_path):
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_path
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    db.app = app
-    db.init_app(app)
-    db.create_all()
-
-'''
-Question
-'''
-class Question(db.Model):  
-  __tablename__ = 'questions'
-
-  id = Column(Integer, primary_key=True)
-  question = Column(String)
-  answer = Column(String)
-  category = Column(String)
-  difficulty = Column(Integer)
-
-  def __init__(self, question, answer, category, difficulty):
-    self.question = question
-    self.answer = answer
-    self.category = category
-    self.difficulty = difficulty
-
-  def insert(self):
-    db.session.add(self)
-    db.session.commit()
-  
-  def update(self):
-    db.session.commit()
-
-  def delete(self):
-    db.session.delete(self)
-    db.session.commit()
-
-  def format(self):
-    return {
-      'id': self.id,
-      'question': self.question,
-      'answer': self.answer,
-      'category': self.category,
-      'difficulty': self.difficulty
-    }
-
-'''
-Category
-'''
-class Category(db.Model):  
-  __tablename__ = 'categories'
-
-  id = Column(Integer, primary_key=True)
-  type = Column(String)
-
-  def __init__(self, type):
-    self.type = type
-
-  def format(self):
-    return {
-      'id': self.id,
-      'type': self.type
-    }

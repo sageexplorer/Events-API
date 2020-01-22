@@ -2,7 +2,11 @@
   "name": "quotes",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "jwks-rsa": "^1.6.1"
+  },
   "devDependencies": {
     "serverless-python-requirements": "^5.0.1",
     "serverless-wsgi": "^1.7.4"

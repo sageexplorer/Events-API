@@ -20,4 +20,3 @@ authlib
 flask-session
 python-jose
 flask_bootstrap
-http.client
