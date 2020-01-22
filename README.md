@@ -52,7 +52,29 @@ response: {
 
 ```
 /get/events
-This requires a user id which is created first
+required params: {id} ID of a user whose events are desired.
+{
+  "events": [
+    {
+      "data": "Feb 5th",
+      "event": "TED",
+      "event_id": 6,
+      "location": "Los Angeles",
+      "user_id": 1,
+      "website": "https://www.onedayu.com/"
+    },
+    {
+      "data": "Feb 5th",
+      "event": "aya",
+      "event_id": 7,
+      "location": "Los Angeles",
+      "user_id": 1,
+      "website": "https://www.onedayu.com/"
+    }
+  ],
+  "success": true
+}
+
 ```
 ```
 /post/event
