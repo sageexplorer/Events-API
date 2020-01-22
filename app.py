@@ -7,6 +7,7 @@ from auth import AuthError, requires_auth
 from flask_bootstrap import Bootstrap
 import os 
 from dotenv import load_dotenv
+from flask_cors import CORS
 load_dotenv()
 from pathlib import Path  
 env_path = Path('.') / '.env'
@@ -16,7 +17,7 @@ load_dotenv(dotenv_path=env_path)
 app = Flask(__name__)
 sess = Session()
 oauth = OAuth(app)
-
+CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', None)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
@@ -134,7 +135,7 @@ def get_events(permission=''):
 
 @app.route('/get/all/events')
 @requires_auth('get:allevents')
-def get_all_events(permission):
+def get_all_events(permission=''):
     try:
         events =  Event.query.all()
         print(events)
@@ -142,7 +143,8 @@ def get_all_events(permission):
         "events": [event.serialize() for event in events],
         "success": True
         })
-    except Error:
+    except:
+        print("MY ERROR IS",  sys.exc_info()[0])
         abort(401)
 
 
