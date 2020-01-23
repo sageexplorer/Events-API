@@ -4,6 +4,7 @@
 cd YOUR_PROJECT_DIRECTORY_PATH/
 
 virtualenv --no-site-packages env
+(sometimes, you need to specify python version depending on the os..as --python=python3) 
 
 source env/bin/activate
 
