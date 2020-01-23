@@ -159,8 +159,24 @@ curl -X GET \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
   -H 'Content-Length: 14' \
-  -H 'Content-Type: text/plain' \
+  -H 'Content-Type: application/json' \
   -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' 
   ```
   
   ## Get events Test ( This is for token bearer who has ONLY user role) 
+curl -X GET \
+  http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/events \
+  -H 'Accept: */*' \
+  -H 'Accept-Encoding: gzip, deflate' \
+  -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EaERNamhDTlRCRE1qWXlOVGhDTXpBM1JqWXdSRGxFTjBZME1ETkdOVEE1TkVFeE0wRkdOQSJ9.eyJpc3MiOiJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDg5OTc3MzE5OTQwNDY0ODYwMTciLCJhdWQiOlsiZXZlbnQiLCJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTc5ODIxNzQxLCJleHAiOjE1Nzk5MDgxNDEsImF6cCI6IlhsZ1V0bVgxSDQ4dm1LZXlSTjdnMFNTaWluMTdGUWtpIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImdldDpldmVudHMiLCJwb3N0OmV2ZW50cyJdfQ.TK6KUXI7j335F-MvSlTTl9OFijsJz2QE9rUsUfzwtLKnWNWc761gy_PHAF1j6eC6A55gjDPh5IPjxq3iPcVOO2bZjiwQOxB03L1jq61DTxUz3217tI4aPLGa08Zbpt8duz-az2UXvYlBSLf0xswoD5kOkBGFCeQ1daX09KbrlM_YaqyULHo23JlA64XJ6gi1Egq2QYP4Gzwq2oq297zQmAJfGQlmxO5aSWmFlHyB4KPgWj-L_BDA8T7SUnWViappirxrJjbYbc-nXj_e8opk0nDhl6D5WF_tzifSpzqtsEBX5pCtFpAXJF2vxktCt-LN-TqCcFNdttU1QREvr283ag' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Length: 12' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' \
+  -H 'Postman-Token: 28daf27d-4bea-4d50-8547-080af0292421,c896ae7c-7df7-4d28-87e7-8b5f67a15f28' \
+  -H 'User-Agent: PostmanRuntime/7.20.1' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"id": 1
+}'
