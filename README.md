@@ -148,6 +148,8 @@ response: {
 ```
 
 ## TESTING 
+### To get all the events, just copy and paste the following snippet,or put your own token. The permission required for this is get:allevents or a role of a manager.
+
 ```javascript
 curl -X GET \
   http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/all/events \
@@ -159,7 +161,4 @@ curl -X GET \
   -H 'Content-Length: 14' \
   -H 'Content-Type: text/plain' \
   -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' \
-  -H 'Postman-Token: f10801e4-c26b-4424-977c-e592c58b206d,1dafc48c-459d-4cd3-aed2-948be8b269e0' \
-  -H 'User-Agent: PostmanRuntime/7.20.1' \
-  -H 'cache-control: no-cache'
   ```
