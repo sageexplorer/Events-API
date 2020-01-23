@@ -148,7 +148,7 @@ response: {
 ```
 
 ## TESTING 
-### To get all the events, just copy and paste the following snippet,or put your own token. The permission required for this is get:allevents or a role of a manager.
+#### To get all the events, just copy and paste the following snippet,or put your own token. The permission required for this is get:allevents or a role of a manager.
 
 ```javascript
 curl -X GET \
@@ -163,7 +163,7 @@ curl -X GET \
   -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' 
   ```
   
-  ## Get events Test ( This is for token bearer who has ONLY user role) 
+  #### Get events Test ( This is for token bearer who has ONLY user role) 
 ```javascript  
 curl -X GET \
   http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/events \
