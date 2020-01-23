@@ -160,5 +160,7 @@ curl -X GET \
   -H 'Connection: keep-alive' \
   -H 'Content-Length: 14' \
   -H 'Content-Type: text/plain' \
-  -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' \
+  -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' 
   ```
+  
+  ## Get events Test ( This is for token bearer who has ONLY user role) 
