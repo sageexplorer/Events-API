@@ -175,9 +175,6 @@ curl -X GET \
   -H 'Content-Length: 12' \
   -H 'Content-Type: application/json' \
   -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' \
-  -H 'Postman-Token: 28daf27d-4bea-4d50-8547-080af0292421,c896ae7c-7df7-4d28-87e7-8b5f67a15f28' \
-  -H 'User-Agent: PostmanRuntime/7.20.1' \
-  -H 'cache-control: no-cache' \
   -d '{
 	"id": 1
 }'
@@ -195,8 +192,6 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Host: ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080' \
   -H 'Postman-Token: c8e51ef2-24f6-47f6-a0eb-cd1ac2af8f28,5cff118e-6a0e-4e0c-97ba-55b3a26e2db6' \
-  -H 'User-Agent: PostmanRuntime/7.20.1' \
-  -H 'cache-control: no-cache' \
   -d '{
 	"user_id": 1,
 	"event": "WisDome LA",
