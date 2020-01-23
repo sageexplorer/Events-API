@@ -5,7 +5,11 @@ from jose import jwt
 from urllib.request import urlopen
 from flask import Flask, request, jsonify, abort
 import os 
-
+from dotenv import load_dotenv
+load_dotenv()
+from pathlib import Path  
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 AUTH0_DOMAIN = os.environ.get('AUTH_DOMAIN', None)
 ALGORITHMS = ['RS256']
@@ -20,6 +24,7 @@ class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
+      
 
 
 ## Auth Header
@@ -121,19 +126,23 @@ def verify_decode_jwt(token):
     
 '''If JWT token is not found or invalid, then throw authentication error'''
 def requires_auth(permission=''):
+    print('MY PERMISSION IS', permission)
     def requires_auth_decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
             try:
                 token = get_token_auth_header()
             except:
+                print(f'I can\'t get the token because {sys.exc_info()[0]}')
                 abort(401)    
             try:
                 payload = verify_decode_jwt(token)
             except:
+                print(f'I can\'t verify the token because {sys.exc_info()[0]}')
                 abort(401)    
             check_permissions(permission, payload)
             return f(payload, *args, **kwargs)
 
         return wrapper
     return requires_auth_decorator
+
