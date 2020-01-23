@@ -164,6 +164,7 @@ curl -X GET \
   ```
   
   ## Get events Test ( This is for token bearer who has ONLY user role) 
+```javascript  
 curl -X GET \
   http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/events \
   -H 'Accept: */*' \
@@ -180,3 +181,4 @@ curl -X GET \
   -d '{
 	"id": 1
 }'
+```
