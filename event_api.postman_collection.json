@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "e33f6f35-2e86-4201-8c5a-2ec524e1da6e",
+		"name": "event_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get events (User)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1367dc4-7bd1-4acc-bc84-0cd17f880d31",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EaERNamhDTlRCRE1qWXlOVGhDTXpBM1JqWXdSRGxFTjBZME1ETkdOVEE1TkVFeE0wRkdOQSJ9.eyJpc3MiOiJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDg5OTc3MzE5OTQwNDY0ODYwMTciLCJhdWQiOlsiZXZlbnQiLCJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTc5ODIxNzQxLCJleHAiOjE1Nzk5MDgxNDEsImF6cCI6IlhsZ1V0bVgxSDQ4dm1LZXlSTjdnMFNTaWluMTdGUWtpIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImdldDpldmVudHMiLCJwb3N0OmV2ZW50cyJdfQ.TK6KUXI7j335F-MvSlTTl9OFijsJz2QE9rUsUfzwtLKnWNWc761gy_PHAF1j6eC6A55gjDPh5IPjxq3iPcVOO2bZjiwQOxB03L1jq61DTxUz3217tI4aPLGa08Zbpt8duz-az2UXvYlBSLf0xswoD5kOkBGFCeQ1daX09KbrlM_YaqyULHo23JlA64XJ6gi1Egq2QYP4Gzwq2oq297zQmAJfGQlmxO5aSWmFlHyB4KPgWj-L_BDA8T7SUnWViappirxrJjbYbc-nXj_e8opk0nDhl6D5WF_tzifSpzqtsEBX5pCtFpAXJF2vxktCt-LN-TqCcFNdttU1QREvr283ag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/events",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all events (Manager)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14cbc089-3363-40fb-80a0-e22543e2aad1",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,200]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/all/events",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"all",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users (Public)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6182165e-f88c-4733-9e89-0e804ba9daf0",
+						"exec": [
+							"pm.test(\"Get Users returns users\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/users",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post events (User)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b830245-9995-40ca-b6e6-a093d0d2e4f3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1,\n    \"event\": \"WisDome LA\",\n    \"location\": \"Santa Monica\",\n    \"date\": \"March 21st 2020\",\n    \"website\": \"www.wisdomela.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/create/events",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"create",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch events (Manager)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1f1095b8-640b-4072-a61f-9070fa440084",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EaERNamhDTlRCRE1qWXlOVGhDTXpBM1JqWXdSRGxFTjBZME1ETkdOVEE1TkVFeE0wRkdOQSJ9.eyJpc3MiOiJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTQ5MjE3MjU3NTE4MTA0MzA1MTIiLCJhdWQiOlsiZXZlbnQiLCJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTc5ODI0NDg4LCJleHAiOjE1Nzk5MTA4ODgsImF6cCI6IlhsZ1V0bVgxSDQ4dm1LZXlSTjdnMFNTaWluMTdGUWtpIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpldmVudHMiLCJnZXQ6YWxsZXZlbnRzIiwiZ2V0OmV2ZW50cyIsInBhdGNoOmV2ZW50cyIsInBvc3Q6ZXZlbnRzIl19.DF8XkjUs-_gAl7JwkRXYJnEFQ0eOZld3TimspIb4-iatdeaC5C1Gi4al-ioqXS0obdo9ZnoxipwCM6E6a78KQPkf2x2VC7l7xWguRU1aXO4TVqCHMpL-nvbKeP2x7xxBe3LyoBiyX-pXYCpxSGhwn_SCFD3Nc1rV0QN4g8l7eMURsVf2yNxZuIt7rQOUy4KnaBTDEpbqrpPThI4xOHW6OXlfe0TCw0-GncieXgJzOHEYWdtVENfV8q3VVEVKOtKyUxDfJ0CFkpv1NakOUTq790Y9HY0hG2_S_NOru_ijx5SjNkgroAnSfZY6pS7AgFdIbpXvfZvm6MRuxnCXoW2D4Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"id\": 7,\n \"user_id\":1,\n \"event\": \"aya\",\n \"date\": \"02/05/2020\",\n \"location\": \"Downtown\",\n \"website\": \"www.lalive.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/patch/events",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"patch",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user (Public)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6743a3c2-6508-4c7a-bebc-5a233e5c0d7d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Rob\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/create/user",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"create",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users (Public)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6245618f-14ea-4074-9c18-5b8616d924fc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/get/users",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event (Manager)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57350314-21eb-4f64-a4cb-d2add27547bf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/delete/events",
+					"protocol": "http",
+					"host": [
+						"ec2-13-52-247-232",
+						"us-west-1",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"delete",
+						"events"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EaERNamhDTlRCRE1qWXlOVGhDTXpBM1JqWXdSRGxFTjBZME1ETkdOVEE1TkVFeE0wRkdOQSJ9.eyJpc3MiOiJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTQ5MjE3MjU3NTE4MTA0MzA1MTIiLCJhdWQiOlsiZXZlbnQiLCJodHRwczovL2Rldi0tYzl5OWNhOS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTc5ODIwNTk3LCJleHAiOjE1Nzk5MDY5OTcsImF6cCI6IlhsZ1V0bVgxSDQ4dm1LZXlSTjdnMFNTaWluMTdGUWtpIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpldmVudHMiLCJnZXQ6YWxsZXZlbnRzIiwiZ2V0OmV2ZW50cyIsInBhdGNoOmV2ZW50cyIsInBvc3Q6ZXZlbnRzIl19.I8VNNBTQ63Z0lDTFpIjKy009p_M7CXSOhrV_34tw1nMFMRcaypqRTx1c4WLiFp2LEf0a6-zoS_02Q8Z0_yF6xSLit5J-kQXWgZ_3XTdyTgieS_AqAKkwg7Dx7BzBKRsqSZaygq2ejDStoXaWmfNoqV6wxgvfbBKieXl-zEYWYj3eNIGzlfm02fWZ23xEZQhmbKhD-2mCMIIwZXDoJVta5D3bjFHa-_n0mYdMYX0FXv8QSkzXVIOxRm1wtpt9WUFggHLwvsYgOnJQRePhedqbJqxsKhWA6cihRd4HiXTQYtOzhLs7ff6_g13A22L2HwcdBXhMEbLerzRVJuLJ_Sqjpw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0ef54452-0aaa-4cb8-aba5-f2f5d0ac3f38",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fdb13e0d-e36f-4cd4-85be-6d27c27da1da",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "454c82b2-50b2-4927-bf65-5d7465caa4df",
+			"key": "URL ",
+			"value": "http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
