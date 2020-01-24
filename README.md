@@ -1,4 +1,4 @@
-## FLASK API project. This project is deployed in AWS. http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080
+##### FLASK API project. This project is deployed in AWS. http://ec2-13-52-247-232.us-west-1.compute.amazonaws.com:8080
 
 ```javascript
 cd YOUR_PROJECT_DIRECTORY_PATH/
@@ -151,10 +151,10 @@ response: {
 }
 ```
 
-## TESTING 
-# Please Run the Postman collection for running tests. Please look at the event_id that is currently returned if you want to delete that in the test. 
+#### TESTING 
+##### Please Run the Postman collection for running tests. Please look at the event_id that is currently returned if you want to delete that in the test. 
 
-#### To get all the events, just copy and paste the following snippet,or put your own token. The permission required for this is get:allevents or a role of a manager.
+##### To get all the events, just copy and paste the following snippet,or put your own token. The permission required for this is get:allevents or a role of a manager.
 
 ```
 curl -X GET \
