@@ -1,4 +1,4 @@
-## FLASK API project
+## FLASK API project. This project is deployed in AWS.
 
 ```javascript
 cd YOUR_PROJECT_DIRECTORY_PATH/
