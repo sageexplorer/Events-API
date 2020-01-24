@@ -15,6 +15,10 @@ export FLASK_APP=app
 export FLASK_ENV=development # enables debug mode
 
 python3 app.py 
+
+To run in Gunicorn, gunicorn -b:8080 app:app --log-level debug
+
+You can use the POSTMAN collection to run all the tests, or use a CURL example at the bottom of this document.
 ```
 
 #### You can create an event or events.
